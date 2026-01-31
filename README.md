@@ -254,7 +254,7 @@ For issues and feature requests, please contact the development team.
 
 ---
 
-**Built with ❤️ by Aaditya Jujagar with DMC Pvt. Ltd.**
+**Built with ❤️ by Aaditya Jujagar from Data Master Consulting.**
 
 ---
 
