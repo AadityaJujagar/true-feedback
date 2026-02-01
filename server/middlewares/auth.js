@@ -1,16 +1,14 @@
 const JWT = require("jsonwebtoken");
 const User = require("../models/User");
-require("dotenv").config();
 
 exports.auth = async (req, res, next) => {
   try {
-    const token =
-      req.cookies?.token || req.header("Authorization")?.replace("Bearer ", "");
+    const token = req.cookies && req.cookies.token;
 
     if (!token) {
       return res.status(401).json({
         success: false,
-        error: "Access denied. Token unavailable.",
+        message: "Authentication token missing",
       });
     }
 
@@ -21,17 +19,17 @@ exports.auth = async (req, res, next) => {
     if (!user) {
       return res.status(401).json({
         success: false,
-        error: "User not found.",
+        message: "User not found",
       });
     }
 
     req.user = user;
     next();
   } catch (err) {
-    console.log("Auth error:", err);
+    console.error("Auth middleware error:", err.message);
     return res.status(401).json({
       success: false,
-      error: "Invalid or expired token.",
+      message: "Invalid or expired token",
     });
   }
 };
