@@ -18,7 +18,11 @@ export const AuthProvider = ({ children }) => {
         setUser(res.data.user);
       }
     } catch (err) {
-      console.log(err);
+      // Suppress expected 401 Unauthorized when there's no session yet.
+      // Log other unexpected errors for debugging.
+      if (err.response?.status && err.response.status !== 401) {
+        console.error(err);
+      }
       setUser(null);
     } finally {
       setLoading(false);
