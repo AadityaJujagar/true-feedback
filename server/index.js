@@ -16,17 +16,21 @@ require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 const app = express();
 const server = http.createServer(app);
+app.use(express.json());
+app.use(cookieParser());
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: (origin, callback) => {
+      if (!origin || origin === process.env.CLIENT_URL) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   }),
 );
-
-app.use(express.json());
-app.use(cookieParser());
 
 dbConnect();
 
