@@ -13,7 +13,7 @@
 
 ## 🎯 About
 
-Secret Whisper is a modern web platform that enables users to build their digital profiles and receive real-time feedback from the community. Whether it's constructive criticism, appreciation, or suggestions, Secret Whisper provides a safe and organized space for meaningful interactions.
+True-Feedback is a modern web platform that enables users to build their digital profiles and receive real-time feedback from the community. Whether it's constructive criticism, appreciation, or suggestions, True Feedback provides a safe and organized space for meaningful interactions.
 
 Each user gets a shareable profile link where others can leave comments—without identity constraints. Comments can be toggled visible/hidden, giving profile owners full control over what's displayed.
 

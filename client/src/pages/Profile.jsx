@@ -149,7 +149,7 @@ export const Profile = () => {
                       onClick={() => setIsEditing(true)}
                       className="w-full py-2 rounded-full bg-primary text-primary-foreground"
                     >
-                      Edit Profile
+                      Edit Name or Profile Picture
                     </button>
 
                     <button
@@ -206,7 +206,7 @@ export const Profile = () => {
                 </p>
               ) : comments.length === 0 ? (
                 <p className="text-center text-muted-foreground italic">
-                  No feedback yet. Be the first!
+                  No feedback yet.
                 </p>
               ) : (
                 <CommentList
